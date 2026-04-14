@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://anam-vue.skycodelab.in/sitemap.xml
