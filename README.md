@@ -2,7 +2,7 @@
 
 A lightweight, AnamUI dashboard built with **Vue 3 + Vite + Tailwind CSS**.
 
-## 🚀 Quick start
+## 🚀 Quick start 
 
 ```bash
 # 1) Extract and install deps
