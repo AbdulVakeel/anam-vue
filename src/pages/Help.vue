@@ -30,9 +30,18 @@ const faqs = reactive([
   { q: 'How to change theme?', a: 'Use the toggle on the top bar to switch between dark and light modes.', open: false },
   { q: 'How to contact support?', a: 'Send us a message from the Help page or email support@example.com.', open: false },
   { q: 'Can I use this on mobile?', a: 'Yes! The entire site is fully responsive and works great on all devices.', open: false },
-  { q: 'Is my data secure?', a: 'Absolutely! We use encryption and strict privacy measures to protect your data.', open: false }
-])
+  { q: 'Is my data secure?', a: 'Absolutely! We use encryption and strict privacy measures to protect your data.', open: false },
 
+  // 🔥 NEW FAQs
+  { q: 'How to create an account?', a: 'Click on the Sign Up button and fill in your details to get started.', open: false },
+  { q: 'How to upgrade my plan?', a: 'Go to the pricing page and choose the plan that fits your needs.', open: false },
+  { q: 'How to withdraw earnings?', a: 'Navigate to the withdrawal section and submit your request.', open: false },
+  { q: 'How to update profile details?', a: 'Go to your profile settings and edit your personal information.', open: false },
+  { q: 'What payment methods are supported?', a: 'We support multiple payment gateways including crypto and manual methods.', open: false },
+  { q: 'Do I need KYC verification?', a: 'Yes, KYC verification is required before making withdrawals.', open: false },
+  { q: 'How long does withdrawal take?', a: 'Withdrawal processing time depends on the selected payment method.', open: false },
+  { q: 'Can I change my password anytime?', a: 'Yes, you can change your password anytime from account settings.', open: false }
+])
 const toggleFAQ = (index) => {
   faqs.forEach((item, i) => {
     item.open = (i === index) ? !item.open : false
