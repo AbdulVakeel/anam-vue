@@ -1,105 +1,203 @@
 <template>
-  <div class="max-w-6xl mx-auto px-4 py-12">
+  <div class="max-w-6xl mx-auto px-4 py-16">
     <!-- Heading -->
-    <h2
-      class="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-gray-100 leading-snug"
-    >
-      Customizable Membership Options Designed for Your Group's Growth!
-    </h2>
+    <div class="text-center mb-12">
+      <h2
+        class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 bg-clip-text text-transparent leading-tight"
+      >
+        Customizable Membership Options
+      </h2>
+      <p class="text-gray-600 dark:text-gray-400 mt-3 text-lg">
+        Designed for Your Group's Growth!
+      </p>
+    </div>
 
     <!-- Billing Toggle -->
-    <div
-      class="flex justify-center items-center mt-6 space-x-3 text-gray-700 dark:text-gray-300"
-    >
-      <span class="text-sm md:text-base">Monthly</span>
-      <label
-        class="relative inline-flex items-center cursor-pointer select-none"
-        aria-label="Toggle billing period"
-      >
-        <input
-          type="checkbox"
-          v-model="isYearly"
-          class="sr-only peer"
-          aria-checked="isYearly"
-        />
-        <div
-          class="w-11 h-6 bg-gray-200 dark:bg-gray-700 rounded-full peer peer-checked:bg-blue-600 
-          after:content-[''] after:absolute after:top-[2px] after:left-[2px] 
-          after:bg-white after:border-gray-300 dark:after:border-gray-600 after:border 
-          after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:after:translate-x-full"
-        ></div>
-      </label>
-      <span class="text-sm md:text-base">
-        Yearly
-        <span class="text-xs text-green-500 font-medium">(Save 20%)</span>
-      </span>
+    <div class="flex justify-center items-center mb-12">
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-full p-1 inline-flex gap-1">
+        <button
+          @click="isYearly = false"
+          :class="[
+            'px-6 py-2 rounded-full text-sm font-medium transition-all duration-200',
+            !isYearly
+              ? 'bg-white dark:bg-gray-900 text-gray-900 dark:text-white shadow-sm'
+              : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
+          ]"
+        >
+          Monthly
+        </button>
+        <button
+          @click="isYearly = true"
+          :class="[
+            'px-6 py-2 rounded-full text-sm font-medium transition-all duration-200 flex items-center gap-2',
+            isYearly
+              ? 'bg-white dark:bg-gray-900 text-gray-900 dark:text-white shadow-sm'
+              : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
+          ]"
+        >
+          Yearly
+          <span class="text-xs bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-2 py-0.5 rounded-full">
+            Save 20%
+          </span>
+        </button>
+      </div>
     </div>
 
     <!-- Pricing Cards -->
-    <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <!-- Silver Plan -->
-      <div
-        class="plan-card"
-      >
-        <span class="plan-label">ESSENTIAL</span>
-        <h3 class="plan-price text-blue-500">Free</h3>
-        <ul class="plan-features">
-          <li class="feature-yes">✔ Up to 3 team members</li>
-          <li class="feature-yes">✔ Basic collaboration</li>
-          <li class="feature-no">✘ Expanded storage</li>
-          <li class="feature-no">✘ Data protection</li>
-          <li class="feature-no">✘ Advanced controls</li>
-        </ul>
-        <button class="btn-primary">Get Started</button>
+      <div class="group plan-card">
+        <div class="w-full">
+          <span class="plan-label">Essential</span>
+          <div class="mt-4 mb-6">
+            <div class="text-5xl font-bold text-gray-900 dark:text-white">
+              Free
+            </div>
+          </div>
+          <ul class="plan-features">
+            <li class="feature-yes">
+              <svg class="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span>Up to 3 team members</span>
+            </li>
+            <li class="feature-yes">
+              <svg class="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span>Basic collaboration</span>
+            </li>
+            <li class="feature-no">
+              <svg class="w-5 h-5 text-gray-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-gray-500">Expanded storage</span>
+            </li>
+            <li class="feature-no">
+              <svg class="w-5 h-5 text-gray-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-gray-500">Data protection</span>
+            </li>
+            <li class="feature-no">
+              <svg class="w-5 h-5 text-gray-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-gray-500">Advanced controls</span>
+            </li>
+          </ul>
+          <button class="btn-secondary mt-auto">
+            Get Started
+          </button>
+        </div>
       </div>
 
       <!-- Bronze Plan (Popular) -->
-      <div
-        class="plan-card border-2 border-orange-300 dark:border-orange-600 relative"
-      >
-        <span
-          class="absolute top-4 right-4 bg-orange-500 text-white text-xs px-3 py-1 rounded-full shadow"
-        >
-          BEST VALUE
-        </span>
-        <span class="plan-label">PROFESSIONAL</span>
-        <div class="plan-price-wrap">
-          <span class="plan-price text-orange-500">
-            {{ isYearly ? '$47.90' : '$4.99' }}
-          </span>
-          <span class="plan-duration">
-            /{{ isYearly ? 'year' : 'mo' }}
+      <div class="group plan-card popular relative">
+        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+          <span class="bg-gradient-to-r from-orange-500 to-orange-600 text-white text-xs font-semibold px-4 py-1.5 rounded-full shadow-lg">
+            🔥 Best Value
           </span>
         </div>
-        <ul class="plan-features">
-          <li class="feature-yes">✔ Up to 5 collaborators</li>
-          <li class="feature-yes">✔ Cross-device access</li>
-          <li class="feature-yes">✔ 80GB secure storage</li>
-          <li class="feature-no">✘ Automated backups</li>
-          <li class="feature-no">✘ Team management</li>
-        </ul>
-        <button class="btn-orange">Upgrade Now</button>
+        <div class="w-full pt-4">
+          <span class="plan-label">Professional</span>
+          <div class="mt-4 mb-6">
+            <div class="flex items-baseline justify-center gap-1">
+              <span class="text-5xl font-bold bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent">
+                {{ isYearly ? '$47.90' : '$4.99' }}
+              </span>
+              <span class="text-gray-500 dark:text-gray-400">/{{ isYearly ? 'year' : 'mo' }}</span>
+            </div>
+            <p v-if="isYearly" class="text-sm text-green-600 dark:text-green-400 mt-2">
+              Save $11.89 annually
+            </p>
+          </div>
+          <ul class="plan-features">
+            <li class="feature-yes">
+              <svg class="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span>Up to 5 collaborators</span>
+            </li>
+            <li class="feature-yes">
+              <svg class="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span>Cross-device access</span>
+            </li>
+            <li class="feature-yes">
+              <svg class="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span>80GB secure storage</span>
+            </li>
+            <li class="feature-no">
+              <svg class="w-5 h-5 text-gray-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-gray-500">Automated backups</span>
+            </li>
+            <li class="feature-no">
+              <svg class="w-5 h-5 text-gray-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-gray-500">Team management</span>
+            </li>
+          </ul>
+          <button class="btn-primary">
+            Upgrade Now
+          </button>
+        </div>
       </div>
 
       <!-- Gold Plan -->
-      <div class="plan-card">
-        <span class="plan-label">ENTERPRISE</span>
-        <div class="plan-price-wrap">
-          <span class="plan-price text-blue-500">
-            {{ isYearly ? '$95.90' : '$9.99' }}
-          </span>
-          <span class="plan-duration">
-            /{{ isYearly ? 'year' : 'mo' }}
-          </span>
+      <div class="group plan-card">
+        <div class="w-full">
+          <span class="plan-label">Enterprise</span>
+          <div class="mt-4 mb-6">
+            <div class="flex items-baseline justify-center gap-1">
+              <span class="text-5xl font-bold text-gray-900 dark:text-white">
+                {{ isYearly ? '$95.90' : '$9.99' }}
+              </span>
+              <span class="text-gray-500 dark:text-gray-400">/{{ isYearly ? 'year' : 'mo' }}</span>
+            </div>
+          </div>
+          <ul class="plan-features">
+            <li class="feature-yes">
+              <svg class="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span>Unlimited members</span>
+            </li>
+            <li class="feature-yes">
+              <svg class="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span>Priority support</span>
+            </li>
+            <li class="feature-yes">
+              <svg class="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span>120GB storage</span>
+            </li>
+            <li class="feature-yes">
+              <svg class="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span>Weekly backups</span>
+            </li>
+            <li class="feature-yes">
+              <svg class="w-5 h-5 text-green-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span>Advanced permissions</span>
+            </li>
+          </ul>
+          <button class="btn-secondary mt-auto">
+            Go Premium
+          </button>
         </div>
-        <ul class="plan-features">
-          <li class="feature-yes">✔ Unlimited members</li>
-          <li class="feature-yes">✔ Priority support</li>
-          <li class="feature-yes">✔ 120GB storage</li>
-          <li class="feature-yes">✔ Weekly backups</li>
-          <li class="feature-yes">✔ Advanced permissions</li>
-        </ul>
-        <button class="btn-primary">Go Premium</button>
       </div>
     </div>
   </div>
@@ -112,35 +210,66 @@ const isYearly = ref(false);
 
 <style scoped>
 .plan-card {
-  @apply rounded-xl border border-gray-200 dark:border-gray-800 
-    bg-white dark:bg-gray-900 shadow-md hover:shadow-lg transition-all duration-300 
-    p-6 flex flex-col items-center text-center;
+  @apply relative rounded-2xl border border-gray-200 dark:border-gray-800 
+    bg-white dark:bg-gray-900/50 backdrop-blur-sm
+    shadow-lg hover:shadow-xl transition-all duration-300 
+    p-8 flex flex-col;
 }
+
+.plan-card.popular {
+  @apply border-2 border-orange-500/50 dark:border-orange-500/50
+    shadow-xl shadow-orange-500/10;
+}
+
 .plan-label {
-  @apply text-sm tracking-wider text-gray-400 mb-2 uppercase;
+  @apply text-xs font-semibold tracking-wider text-gray-500 dark:text-gray-400 
+    uppercase text-center block;
 }
-.plan-price-wrap {
-  @apply flex items-center mb-4;
-}
-.plan-price {
-  @apply text-3xl font-bold;
-}
-.plan-duration {
-  @apply ml-1 text-gray-400;
-}
+
 .plan-features {
-  @apply text-sm space-y-2 mb-6;
+  @apply space-y-3 mb-8 flex-1;
 }
-.feature-yes {
-  @apply text-blue-500;
+
+.feature-yes, .feature-no {
+  @apply flex items-center gap-3 text-sm;
 }
-.feature-no {
-  @apply text-gray-500;
+
+.feature-yes span {
+  @apply text-gray-700 dark:text-gray-300;
 }
+
 .btn-primary {
-  @apply bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-full w-full transition-colors duration-200;
+  @apply w-full bg-gradient-to-r from-orange-500 to-orange-600 
+    hover:from-orange-600 hover:to-orange-700 
+    text-white font-semibold px-6 py-3 rounded-xl 
+    transition-all duration-200 transform hover:scale-[1.02]
+    shadow-lg shadow-orange-500/25;
 }
-.btn-orange {
-  @apply bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full w-full transition-colors duration-200;
+
+.btn-secondary {
+  @apply w-full bg-gray-100 dark:bg-gray-800 
+    hover:bg-gray-200 dark:hover:bg-gray-700 
+    text-gray-900 dark:text-white font-semibold px-6 py-3 rounded-xl 
+    transition-all duration-200;
+}
+
+/* Hover Effects */
+.plan-card:hover {
+  @apply transform -translate-y-1;
+}
+
+.plan-card.popular:hover {
+  @apply transform -translate-y-1 shadow-2xl shadow-orange-500/20;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .plan-card {
+    @apply p-6;
+  }
+  
+  .plan-features {
+    @apply space-y-2;
+  }
 }
 </style>
