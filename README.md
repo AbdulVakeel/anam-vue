@@ -24,17 +24,7 @@
 - 🌍 User Geography (Sessions by Country)
 - 📱 Fully responsive layout
 - 🌙 Dark mode support
-
-### Demo Statistics Preview:
-| Metric | Value |
-|--------|-------|
-| Page Views | 13,647 |
-| Clicks | 9,526 |
-| Conversions | 65.2% |
-| New Users | 9.5k |
-
----
-
+- 
 ## ✨ Features
 
 - ✅ **Modern Tech Stack** - Vue 3, Vite, Tailwind CSS
