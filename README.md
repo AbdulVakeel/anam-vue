@@ -35,18 +35,6 @@
 - ✅ **Reusable Components** - Modular component architecture
 - ✅ **Production Ready** - Optimized build with Vite
 
----
-
-## 📸 Screenshots
-
-| Dashboard | Dark Mode |
-|-----------|-----------|
-| Light theme dashboard view | Dark theme alternative |
-
-*Screenshots coming soon*
-
----
-
 ## 🚀 Quick Start
 
 ### Prerequisites
