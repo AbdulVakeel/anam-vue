@@ -24,7 +24,6 @@
 - 🌍 User Geography (Sessions by Country)
 - 📱 Fully responsive layout
 - 🌙 Dark mode support
-- 
 ## ✨ Features
 
 - ✅ **Modern Tech Stack** - Vue 3, Vite, Tailwind CSS
